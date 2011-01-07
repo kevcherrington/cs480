@@ -3,5 +3,5 @@ This repository will be used to facilitate collaboration for CS480.
 
 Note: A free book about git can be found at http://progit.org/book/
 
-Please add to .gitignore the files your filesystem creates that should not
+Please add to .gitignore the files your filesystem creates, but should not
 be included in the repository.
