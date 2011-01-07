@@ -1,0 +1,252 @@
+\documentclass{article}
+\usepackage{times,amssymb,amsmath}
+\input{/home/cs480/latex/cs480preamble.tex}
+
+%%%
+%%% To produce a Device Independent (.dvi) file from this one:
+%%%
+%%%    latex defineterms.tex
+%%%
+%%% To view the resulting .dvi file:
+%%%
+%%%    xdvi defineterms.dvi
+%%%
+%%% Alternatively, to convert the DVI file to PDF:
+%%%
+%%%    dvipdf defineterms.dvi
+%%%
+
+%%% a useful command, particularly if we change our minds later...
+\newcommand{\term}[1]{\textsc{#1}}
+
+\begin{document}
+
+\headerbox{0.2 Mathematical Notions and Terminology}
+
+\large
+
+Define each of these terms:
+
+\bigskip \indent
+\begin{itemize}
+\item set
+  \subitem An unordered collection of unique objects, called \term{element}s.  Sets are usually designated by their \term{element}s listed within curly braces, such as $A=\set{a,b,c}$.
+\item element(s)
+  \subitem Any particular object contained in a \term{set} or \term{sequence}.
+  Also known as \term{member}.
+\item member(s)
+  \subitem Any particular object contained in a \term{set}.
+  Also known as \term{element}.
+\item subset
+  \subitem A \term{set} which does not include any \term{element}s that are not included in another \term{set}, known as the \term{superset}.  Thus, if \term{A} is a subset of \term{B}, then there are no elements in \term{A} that are not found in \term{B}.
+\item proper subset
+  \subitem A \term{subset} which does not include all the \term{element}s of its \term{superset}.  That is, a \term{proper subset} will have at least one \term{element} less than its \term{superset}.
+\item multiset
+  \subitem An unordered collection of \term{element}s which may or may not be repeated.
+\item infinite set
+  \subitem A \term{set} which contains an infinite number of \term{element}s.
+\item natural numbers $\mathbb{N}$
+  \subitem Generally refers to the positive \term{integer}s, $\set{1,2,3,\ldots}$, though in some contexts it is the non-negative \term{integer}s, $\set{0,1,2, \ldots}$.
+\item integers $\mathbb{Z}$
+  \subitem The positive and negative whole numbers and zero, $\set{\ldots,-2,-1,0,1,2,\ldots}$.  This is equivalent to the \term{natural number}s, their opposites ({\ie} negatives), and zero.
+\item empty set $\varnothing$
+  \subitem The \term{set} which has no \term{element}s.  Often marked $\varnothing$, but sometimes denoted $\set{}$.
+\item union $\cup$
+  \subitem A \term{set operation} which generates a new \term{set} containing all the \term{element}s of each source \term{set}.
+\item intersection $\cap$
+  \subitem A \term{set operation} which generates a new \term{set} containing only the \term{element}s which are found in each of the source \term{set}s.
+\item complement $\overline{A}$
+  \subitem A \term{set operation}, which generates a new \term{set} containing all the \term{element}s in the universe of discourse which are \emph{not} found in the source \term{set}.  Frequently denoted by a line over the source set, thus the complement of $A$ is $\overline{A}$.
+\item compliment
+
+\item Venn diagram
+
+\item sequence
+
+\item tuple(s)
+
+\item k-tuple
+
+\item pair
+
+\item power set %% $\mathcal{P}\left(A\right)$
+
+\item Cartesian product $A \times B$
+
+\item cross product $A \times B$
+
+\item function
+
+\item mapping
+
+\item domain
+
+\item codomain
+
+\item range
+
+\item onto
+
+\item surjective
+
+\item surjection
+
+\item one-to-one
+
+\item injective
+
+\item injection
+
+\end{itemize}
+
+\bigskip \indent
+\begin{itemize}
+\item 1-to-1 correspondence
+
+\item bijective
+
+\item bijection
+
+\item arguments
+
+\item k-ary function
+
+\item arity
+
+\item unary function
+
+\item binary function
+
+\item infix notation
+
+\item prefix notation
+
+\item postfix notation
+
+\item predicate/property
+
+\end{itemize}
+
+\bigskip \indent
+\begin{itemize}
+\item relation $R$
+
+\item k-ary relation
+
+\item k-ary relation on A
+
+\item binary relation
+
+\item equivalence relation
+
+\item reflexive
+
+\item symmetric
+
+\item transitive
+
+\item undirected graph
+
+\end{itemize}
+
+\bigskip \indent
+\begin{itemize}
+\item graph
+
+\item nodes
+
+\item vertices
+
+\item edges
+
+\item degree
+
+\item labeled graph
+
+\item subgraph
+
+\item path
+
+\item simple path
+
+\item connected
+
+\item cycle
+
+\item simple cycle
+
+\item tree
+
+\item root
+
+\item leaves
+
+\item directed graph
+
+\item outdegree
+
+\item indegree
+
+\item directed path
+
+\item strongly connected
+
+\end{itemize}
+   
+\bigskip \indent
+\begin{itemize}
+\item \emph{alphabet} $\Sigma$
+
+\item symbols
+
+\item string over an alphabet
+
+\item length $\abs{w}$
+
+\item empty string $\varepsilon$
+
+\item reverse $w^\mathcal{R}$
+
+\item substring
+
+\item concatenation
+
+\item lexicographic ordering
+
+\item language
+
+\end{itemize}
+
+\bigskip \indent
+\begin{itemize}
+\item Boolean logic
+
+\item Boolean values
+
+\item Boolean operations
+
+\item negation/NOT $\neg$
+
+\item conjunction/AND $\wedge$
+
+\item disjunction/OR $\vee$
+
+\item exclusive or/XOR $\oplus$
+
+\item equality (operation) $\leftrightarrow$
+
+\item implication (operation) $\rightarrow$
+
+\item operands
+
+\item distributive law for AND and OR
+
+\end{itemize}
+
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% compile-command: "latex defineterms.tex && dvipdf defineterms.dvi"
+%%% End: 
