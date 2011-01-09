@@ -58,7 +58,7 @@ Define each of these terms:
 \item complement $\overline{A}$
   \subitem A \term{set operation}, which generates a new \term{set} containing all the \term{element}s in the universe of discourse which are \emph{not} found in the source \term{set}.  Frequently denoted by a line over the source set, thus the complement of $A$ is $\overline{A}$.
 \item compliment
-  \subitem An expression of esteem, respect, affection, or admiration; especially : an admiring remark. A thing that should be given to Brother Neff frequently. 
+  \subitem A polite expression of praise or admiration. A thing that should be given to Brother Neff frequently. 
 \item Venn diagram
   \subitem Shows all hypothetically possible logical relations between a finite collection of \term{sets} using a circle as a representation of a single \term{set}
 \item sequence
@@ -68,22 +68,18 @@ Define each of these terms:
 \item k-tuple
    \subitem A \term{sequence} of $k$ \term{elements}, where $k$ is a positive integer
 \item pair
-   \subitem A 2-\term{tuple}
+   \subitem A \term{sequence} with 2 elements or a 2-\term{tuple}
 \item power set 
   \subitem The \term{power set} of the \term{set} $A$ is the \term{set} of all \term{subsets} of $A$; denoted by the notation $\mathcal{P}\left(A\right)$
-
 \item Cartesian product $A \times B$
-  \subitem The \term{set} of all ordered pairs $(a, b)$, where $a \in A$ and $b \in B$. Thus, $A \times B = \{(a,b) | a\in A \text{and} \ b\in B\}$. It is important to point out that $A \times B$ is generally not the same as $B \times A$.
-
+  \subitem The \term{set} of all ordered \term{pair}s $(a, b)$, where $a \in A$ and $b \in B$. Thus, $A \times B = \{(a,b) | a\in A \text{and} \ b\in B\}$. It is important to point out that $A \times B$ is generally not the same as $B \times A$.
 \item cross product $A \times B$
-  \subitem The \term{cross product} $a \times b$ is defined as a vector $c$ that is perpendicular to both $a$ and $b$, with a direction given by the right-hand rule and a magnitude equal to the area of the parallelogram that the vectors span. The cross product is defined by the formula: $a \times b = a b \sin \theta n$
-
+  \subitem The \term{set} of all ordered \term{pair}s $(a, b)$, where $a \in A$ and $b \in B$. Also known as a \term{Cartesian product}.
+  %%The \term{cross product} $a \times b$ is defined as a vector $c$ that is perpendicular to both $a$ and $b$, with a direction given by the right-hand rule and a magnitude equal to the area of the parallelogram that the vectors span. The cross product is defined by the formula: $a \times b = a b \sin \theta n$
 \item function
-  \subitem A \term{function} $f$ from $A$ to $B$ is an assignment of exactly one element of $B$ to each element of $A$. We write $f(a) = b$ if $b$ is the unique element of $B$ assigned by the function $f$ to the element $a$ of $A$. If $f$ is a function from $A$ to $B$, we write $f \colon A \to B$. Also known as \term{mapping}.
-
+  \subitem A \term{function} $f$ from $A$ to $B$ is an assignment of exactly one \term{element} of $B$ to each \term{element} of $A$. We write $f(a) = b$ if $b$ is the unique \term{element} of $B$ assigned by the \term{function} $f$ to the \term{element} $a$ of $A$. If $f$ is a \term{function} from $A$ to $B$, we write $f \colon A \to B$. Also known as a \term{mapping}.
 \item mapping
-  \subitem A \term{mapping} $f$ from $A$ to $B$ is an assignment of exactly one element of $B$ to each element of $A$. Also known as \term{function}.
-
+  \subitem A \term{mapping} $f$ from $A$ to $B$ is an assignment of exactly one \term{element} of $B$ to each \term{element} of $A$. Also known as a \term{function}.
 \item domain
    \subitem The \term{set} of possible inputs to a \term{function}
 \item codomain
@@ -157,45 +153,45 @@ Define each of these terms:
 \bigskip \indent
 \begin{itemize}
 \item graph
-
+ \item A \term{set} of \term{nodes} with \term{edges} connecting the \term{nodes}.
 \item nodes
-
+ \item Points in a \term{graph}.
 \item vertices
-
+ \item Points in a \term{graph}.
 \item edges
-
+ \item lines in a \term{graph}.
 \item degree
-
+ \item The number of \term{edges} at a particular \term{node}.
 \item labeled graph
-
+ \item A \term{graph} with the \term{nodes} and/or \term{edges} labeled.
 \item subgraph
-
+ \item A \term{graph} $G$ whos \term{vertex} \term{set} is a \term{subset} of \term{graph} $H$, and the \term{edges} of $G$ are the edges of $H$ on the corresponding \term{nodes}.
 \item path
-
+ \item A sequence of \term{nodes} \term{connected} by \term{edges}.
 \item simple path
-
+ \item A \term{path} that doesn't repeat any \term{nodes}.
 \item connected
-
+ \item A \term{graph} with a \term{path} between every two \term{nodes} is considered \term{connected}.
 \item cycle
-
+ \item A \term{path} that starts and ends at the same \term{node}.
 \item simple cycle
-
+ \item A \term{cycle} that contains at least three nodes and repeats only the first and last \term{nodes}.
 \item tree
-
+ \item A \term{graph} that is \term{connected} and has no \term{simple cycles}.
 \item root
-
+ \item A specially designated \term{node} contained in a \term{tree}.
 \item leaves
-
+ \item A \term{node} of degree 1 in a \term{tree} that is not the \term{root}.
 \item directed graph
-
+ \item A \term{graph} with all \term{edges} defined as an \term{ordered pair} or all \term{edges} are unidirectional.
 \item outdegree
-
+ \item The number of directed \term{edges} leaving a \term{node}.
 \item indegree
-
+ \item The number of directed \term{edges} entering a \term{node}.
 \item directed path
-
+ \item A \term{path} where all the \term{edges} are \term{directed egdes}.
 \item strongly connected
-
+ \item A \term{directed graph} is considered \term{strongly connected} if it contains a \term{path} between every two \term{nodes}.
 \end{itemize}
    
 \bigskip \indent
@@ -203,48 +199,70 @@ Define each of these terms:
 \item \emph{alphabet} $\Sigma$
 
 \item symbols
+   \subitem A member of an alphabet.
 
 \item string over an alphabet
+   \subitem A finite \term{sequence} of \term{symbols} from the \term{alphabet}, usually written next to one another and not separated by commas.
 
-\item length $\abs{w}$
+\item length 
+   \subitem If  $w$ is a \term{string} over  $\Sigma$ , the \term{length} of $w$, written $\abs{w}$, is the number of \term{symbols} that it contains.
 
-\item empty string $\varepsilon$
+\item empty string 
+   \subitem The \term{string} of \term{length} zero and is written $\varepsilon$.
 
-\item reverse $w^\mathcal{R}$
+\item reverse
+   \subitem Written $w^\mathcal{R}$, is the \term{string} obtained by writing $w$ in the opposite order (i.e., $w_{n}w_{n-1}...w_{1}).$
 
 \item substring
-
+   \subitem A \term{subset} of the \term{symbols} in a \term{string}, where the order of the \term{elements} is preserved.
+   
 \item concatenation
+   \subitem An operation that sticks strings from one \term{set} together with \term{strings} from another \term{set}. 
 
 \item lexicographic ordering
+   \subitem A natural order structure of the \term{Cartesian product} of two ordered \term{sets}.
 
 \item language
+  \subitem A \term{set} of \term{strings}.
 
 \end{itemize}
 
 \bigskip \indent
 \begin{itemize}
 \item Boolean logic
+  \subitem A mathematical system built around the two values TRUE and FALSE.
 
 \item Boolean values
+   \subitem The values TRUE or FALSE, often represented by 1 or 0.
 
 \item Boolean operations
+  \subitem An operation that follows the rules of \term{Boolean algebra}; each \term{operand} and the result take one of two values
 
-\item negation/NOT $\neg$
+\item negation/NOT 
+   \subitem A \term{boolean operation} that produces the complement of the nominated truth value. It's designated with the \term{symbol} $\neg$.
+   
+\item conjunction/AND
+   \subitem  A logical connective that has the value TRUE if both of its \term{operands} are TRUE, otherwise a value of FALSE. It's designated with the \term{symbol}  $\wedge$.
 
-\item conjunction/AND $\wedge$
+\item disjunction/OR 
+   \subitem A  logical connective that has the value TRUE if at least one of its \term{operands} are TRUE, otherwise a value of FALSE. It's designated with the \term{symbol}  $\vee$
 
-\item disjunction/OR $\vee$
+\item exclusive or/XOR 
+   \subitem A  logical connective that has the value TRUE if either but not both of its two \term{operands} are TRUE. It's designated with the \term{symbol} $\oplus$.
 
-\item exclusive or/XOR $\oplus$
+\item equality (operation) 
+   \subitem A logical connective that has the value TRUE if both of its \term{operands} have the same value. It's designated with the \term{symbol} $\leftrightarrow$.
 
-\item equality (operation) $\leftrightarrow$
-
-\item implication (operation) $\rightarrow$
+\item implication (operation) 
+   \subitem Designated by the \term{symbol} $\rightarrow$, it is a logical connective that has the value FALSE if its first \term{operand} is TRUE and its second \term{operand} is FALSE, otherwise it has a value of TRUE.
 
 \item operands
+   \subitem A quantity on which an \term{operation} is performed.
 
 \item distributive law for AND and OR
+   \subitem A property of binary operations that generalizes the \term{distributive law} from elementary algebra that says, for all $a, b, c$ in $A, (a b) c = (a c) (b c)$. The Boolean version comes in two forms: 
+   \subitem $P \vee (Q \wedge R) = (P \vee Q) \wedge (P \vee R)$
+   \subitem $p \wedge (Q \vee R) = (P \wedge Q) \vee (P \wedge R)$, and its dual.
 
 \end{itemize}
 
