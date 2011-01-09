@@ -1,0 +1,275 @@
+\documentclass{article}
+\usepackage{times,amssymb,amsmath}
+\input{../cs480preamble.tex}
+
+%%%
+%%% To produce a Device Independent (.dvi) file from this one:
+%%%
+%%%    latex defineterms.tex
+%%%
+%%% To view the resulting .dvi file:
+%%%
+%%%    xdvi defineterms.dvi
+%%%
+%%% Alternatively, to convert the DVI file to PDF:
+%%%
+%%%    dvipdf defineterms.dvi
+%%%
+
+%%% a useful command, particularly if we change our minds later...
+\newcommand{\term}[1]{\textsc{#1}}
+
+\begin{document}
+
+\headerbox{0.2 Mathematical Notions and Terminology}
+
+\large
+
+Define each of these terms:
+
+\bigskip \indent
+\begin{itemize}
+\item set
+  \subitem An unordered collection of unique objects, called \term{element}s.  Sets are usually designated by their \term{element}s listed within curly braces, such as $A=\set{a,b,c}$.
+\item element(s)
+  \subitem Any particular object contained in a \term{set} or \term{sequence}.
+  Also known as \term{member}.
+\item member(s)
+  \subitem Any particular object contained in a \term{set}.
+  Also known as \term{element}.
+\item subset
+  \subitem A \term{set} which does not include any \term{element}s that are not included in another \term{set}, known as the \term{superset}.  Thus, if \term{A} is a subset of \term{B}, then there are no elements in \term{A} that are not found in \term{B}.
+\item proper subset
+  \subitem A \term{subset} which does not include all the \term{element}s of its \term{superset}.  That is, a \term{proper subset} will have at least one \term{element} less than its \term{superset}.
+\item multiset
+  \subitem An unordered collection of \term{element}s which may or may not be repeated.
+\item infinite set
+  \subitem A \term{set} which contains an infinite number of \term{element}s.
+\item natural numbers $\mathbb{N}$
+  \subitem Generally refers to the positive \term{integer}s, $\set{1,2,3,\ldots}$, though in some contexts it is the non-negative \term{integer}s, $\set{0,1,2, \ldots}$.
+\item integers $\mathbb{Z}$
+  \subitem The positive and negative whole numbers and zero, $\set{\ldots,-2,-1,0,1,2,\ldots}$.  This is equivalent to the \term{natural number}s, their opposites ({\ie} negatives), and zero.
+\item empty set $\varnothing$
+  \subitem The \term{set} which has no \term{element}s.  Often marked $\varnothing$, but sometimes denoted $\set{}$.
+\item union $\cup$
+  \subitem A \term{set operation} which generates a new \term{set} containing all the \term{element}s of each source \term{set}.
+\item intersection $\cap$
+  \subitem A \term{set operation} which generates a new \term{set} containing only the \term{element}s which are found in each of the source \term{set}s.
+\item complement $\overline{A}$
+  \subitem A \term{set operation}, which generates a new \term{set} containing all the \term{element}s in the universe of discourse which are \emph{not} found in the source \term{set}.  Frequently denoted by a line over the source set, thus the complement of $A$ is $\overline{A}$.
+\item compliment
+  \subitem A polite expression of praise or admiration. A thing that should be given to Brother Neff frequently. 
+\item Venn diagram
+  \subitem Shows all hypothetically possible logical relations between a finite collection of \term{sets} using a circle as a representation of a single \term{set}
+\item sequence
+  \subitem A \term{function} from a \term{subset} of the \term{set} of integers (usually either the \term{set} \{0, 1, 2 ...\} or the \term{set} \{1, 2, 3, ... \}) to a \term{set} S. 
+\item tuple(s)
+   \subitem Finite \term{sequence(s)}
+\item k-tuple
+   \subitem A \term{sequence} of $k$ \term{elements}, where $k$ is a positive integer
+\item pair
+   \subitem A \term{sequence} with 2 elements or a 2-\term{tuple}
+\item power set 
+  \subitem The \term{power set} of the \term{set} $A$ is the \term{set} of all \term{subsets} of $A$; denoted by the notation $\mathcal{P}\left(A\right)$
+\item Cartesian product $A \times B$
+  \subitem The \term{set} of all ordered \term{pair}s $(a, b)$, where $a \in A$ and $b \in B$. Thus, $A \times B = \{(a,b) | a\in A \text{and} \ b\in B\}$. It is important to point out that $A \times B$ is generally not the same as $B \times A$.
+\item cross product $A \times B$
+  \subitem The \term{set} of all ordered \term{pair}s $(a, b)$, where $a \in A$ and $b \in B$. Also known as a \term{Cartesian product}.
+  %%The \term{cross product} $a \times b$ is defined as a vector $c$ that is perpendicular to both $a$ and $b$, with a direction given by the right-hand rule and a magnitude equal to the area of the parallelogram that the vectors span. The cross product is defined by the formula: $a \times b = a b \sin \theta n$
+\item function
+  \subitem A \term{function} $f$ from $A$ to $B$ is an assignment of exactly one \term{element} of $B$ to each \term{element} of $A$. We write $f(a) = b$ if $b$ is the unique \term{element} of $B$ assigned by the \term{function} $f$ to the \term{element} $a$ of $A$. If $f$ is a \term{function} from $A$ to $B$, we write $f \colon A \to B$. Also known as a \term{mapping}.
+\item mapping
+  \subitem A \term{mapping} $f$ from $A$ to $B$ is an assignment of exactly one \term{element} of $B$ to each \term{element} of $A$. Also known as a \term{function}.
+\item domain
+   \subitem The \term{set} of possible inputs to a \term{function}
+\item codomain
+   \subitem The \term{set} of possible outputs to a \term{function}
+\item range
+   \subitem The \term{set} of all images from a \term{subset} of a \term{function's} \term{domain}, where an image is the \term{set} of all outputs obtained when the \term{function} is evaluated at each \term{element} of the \term{subset}
+\item onto
+   \subitem A \term{function} that uses all the \term{elements} of the \term{codomain}
+\item surjective
+   \subitem \term{onto}
+\item surjection
+   \subitem What a \term{function} is called when it is \term{onto}
+\item one-to-one
+   \subitem A \term{function} is \term{one-to-one} iff $f(a) = f(b)$ implies that $a = b$ for all $a$ and $b$. It never maps two different \term{elements} to the same place.
+\item injective
+   \subitem \term{one-to-one}
+\item injection
+   \subitem What a \term{function} is called when it is \term{one-to-one}
+\end{itemize}
+
+\bigskip \indent
+\begin{itemize}
+\item 1-to-1 correspondence
+   \subitem A \term{function} that is both \term{one-to-one} and \term{onto}
+\item bijective
+   \subitem  What a \term{function} is called when it is a \term{one-to-one correspondence}
+\item bijection
+   \subitem \term{1-to-1 correspondence}
+\item arguments
+   \subitem The inputs to a \term{function}
+\item k-ary function
+   \subitem A \term{function} with $k$ arguments
+\item arity
+   \subitem $k$ is the \term{arity} of a \term{$k$-ary function}. It indicates the number of \term{arguments} to a \term{function}
+\item unary function
+   \subitem A \term{function} with a single argument
+\item binary function
+   \subitem A \term{function} with two arguments
+\item infix notation
+   \subitem When the operator for a \term{function} is placed between the operands
+\item prefix notation
+   \subitem When the operator for a \term{function} is placed before the operands
+\item postfix notation
+   \subitem When the operator for a \term{function} is placed after the operands
+\item predicate/property
+   \subitem A \term{function} whose range is {TRUE, FALSE}.
+\end{itemize}
+
+\bigskip \indent
+\begin{itemize}
+\item relation $R$
+  \subitem A \term{predicate}, whose \term{domain} is a \term{set} of \term{$k$-tuples} $A \times \cdot \cdot \cdot \times A$.
+\item k-ary relation
+  \subitem A \term{predicate}, whose \term{domain} is a \term{set} of \term{$k$-tuples} $A \times \cdot \cdot \cdot \times A$.
+\item k-ary relation on A
+  \subitem A \term{predicate}, whose \term{domain} is a \term{set} of \term{$k$-tuples} $A \times \cdot \cdot \cdot \times A$.
+\item binary relation
+  \subitem A 2-ary \term{relation}
+\item equivalence relation
+  \subitem A \term{relation} that specifies how to partition a \term{set} such that every \term{element} of the \term{set} is in exactly one of the blocks in the partition, and the \term{union} of all the blocks equals the original \term{set}. Two \term{elements} of the \term{set} are considered equivalent (with respect to the \term{equivalence relation}) if and only if they are term{elements} of the same block. A \term{binary relation} $R$ is an \term{equivalence relation} if and only if it is \term{reflexive}, \term{symmetric}, and \term{transitive}.
+\item reflexive
+  \subitem A \term{binary relation} $R$ over a set $A$ is \term{reflexive} if every \term{element} is related to itself: $$aRa$$
+\item symmetric
+  \subitem A \term{binary relation} $R$ over a set $A$ is \term{symmetric} if it holds for all $a$ and $b$ in $A$ that if $a$ is related to $b$ then $b$ is related to $a$: $$aRb  \rightarrow bRa$$
+\item transitive
+  \subitem A \term{binary relation} $R$ over a set $A$ is \term{transitive} if whenever an \term{element} $a$ is related to an \term{element} $b$, and $b$ is in turn related to an \term{element} $c$, then $a$ is also related to $c$: $$aRb \wedge bRc \rightarrow aRc$$
+\item undirected graph
+  \subitem A \term{set} of \term{nodes} with \term{edges} connecting some of the \term{nodes}.
+\end{itemize}
+
+\bigskip \indent
+\begin{itemize}
+\item graph
+  \subitem A \term{set} of \term{nodes} with \term{edges} connecting some of the \term{nodes}.
+\item nodes
+  \subitem Points in a \term{graph}.
+\item vertices
+  \subitem Points in a \term{graph}.
+\item edges
+  \subitem lines in a \term{graph}.
+\item degree
+  \subitem The number of \term{edges} at a particular \term{node}.
+\item labeled graph
+  \subitem A \term{graph} with the \term{nodes} and/or \term{edges} labeled.
+\item subgraph
+  \subitem A \term{graph} $G$ whos \term{nodes} are a \term{subset} of the \term{nodes} in \term{graph} $H$, and the \term{edges} of $G$ are the \term{edges} of $H$ on the corresponding \term{nodes}.
+\item path
+  \subitem A sequence of \term{nodes} \term{connected} by \term{edges}.
+\item simple path
+  \subitem A \term{path} that doesn't repeat any \term{nodes}.
+\item connected
+  \subitem A \term{graph} with a \term{path} between every two \term{nodes} is considered \term{connected}.
+\item cycle
+  \subitem A \term{path} that starts and ends at the same \term{node}.
+\item simple cycle
+  \subitem A \term{cycle} that contains at least three nodes and repeats only the first and last \term{nodes}.
+\item tree
+  \subitem A \term{graph} that is \term{connected} and has no \term{simple cycles}.
+\item root
+  \subitem A specially designated \term{node} contained in a \term{tree}.
+\item leaves
+  \subitem A \term{node} of degree 1 in a \term{tree} that is not the \term{root}.
+\item directed graph
+  \subitem A \term{graph} with all \term{edges} defined as an \term{ordered pair} or all \term{edges} are unidirectional.
+\item outdegree
+  \subitem The number of directed \term{edges} leaving a \term{node}.
+\item indegree
+  \subitem The number of directed \term{edges} entering a \term{node}.
+\item directed path
+  \subitem A \term{path} where all the \term{edges} are \term{directed egdes}.
+\item strongly connected
+  \subitem A \term{directed graph} is considered \term{strongly connected} if it contains a \term{path} between every two \term{nodes}.
+\end{itemize}
+   
+\bigskip \indent
+\begin{itemize}
+\item \emph{alphabet} $\Sigma$
+
+\item symbols
+   \subitem A member of an alphabet.
+
+\item string over an alphabet
+   \subitem A finite \term{sequence} of \term{symbols} from the \term{alphabet}, usually written next to one another and not separated by commas.
+
+\item length 
+   \subitem If  $w$ is a \term{string} over  $\Sigma$ , the \term{length} of $w$, written $\abs{w}$, is the number of \term{symbols} that it contains.
+
+\item empty string 
+   \subitem The \term{string} of \term{length} zero and is written $\varepsilon$.
+
+\item reverse
+   \subitem Written $w^\mathcal{R}$, is the \term{string} obtained by writing $w$ in the opposite order (i.e., $w_{n}w_{n-1}...w_{1}).$
+
+\item substring
+   \subitem A \term{subset} of the \term{symbols} in a \term{string}, where the order of the \term{elements} is preserved.
+   
+\item concatenation
+   \subitem An operation that sticks strings from one \term{set} together with \term{strings} from another \term{set}. 
+
+\item lexicographic ordering
+   \subitem A natural order structure of the \term{Cartesian product} of two ordered \term{sets}.
+
+\item language
+  \subitem A \term{set} of \term{strings}.
+
+\end{itemize}
+
+\bigskip \indent
+\begin{itemize}
+\item Boolean logic
+  \subitem A mathematical system built around the two values TRUE and FALSE.
+
+\item Boolean values
+   \subitem The values TRUE or FALSE, often represented by 1 or 0.
+
+\item Boolean operations
+  \subitem An operation that follows the rules of \term{Boolean algebra}; each \term{operand} and the result take one of two values
+
+\item negation/NOT 
+   \subitem A \term{boolean operation} that produces the complement of the nominated truth value. It's designated with the \term{symbol} $\neg$.
+   
+\item conjunction/AND
+   \subitem  A logical connective that has the value TRUE if both of its \term{operands} are TRUE, otherwise a value of FALSE. It's designated with the \term{symbol}  $\wedge$.
+
+\item disjunction/OR 
+   \subitem A  logical connective that has the value TRUE if at least one of its \term{operands} are TRUE, otherwise a value of FALSE. It's designated with the \term{symbol}  $\vee$
+
+\item exclusive or/XOR 
+   \subitem A  logical connective that has the value TRUE if either but not both of its two \term{operands} are TRUE. It's designated with the \term{symbol} $\oplus$.
+
+\item equality (operation) 
+   \subitem A logical connective that has the value TRUE if both of its \term{operands} have the same value. It's designated with the \term{symbol} $\leftrightarrow$.
+
+\item implication (operation) 
+   \subitem Designated by the \term{symbol} $\rightarrow$, it is a logical connective that has the value FALSE if its first \term{operand} is TRUE and its second \term{operand} is FALSE, otherwise it has a value of TRUE.
+
+\item operands
+   \subitem A quantity on which an \term{operation} is performed.
+
+\item distributive law for AND and OR
+   \subitem A property of binary operations that generalizes the \term{distributive law} from elementary algebra that says, for all $a, b, c$ in $A, (a b) c = (a c) (b c)$. The Boolean version comes in two forms: 
+   \subitem $P \vee (Q \wedge R) = (P \vee Q) \wedge (P \vee R)$
+   \subitem $p \wedge (Q \vee R) = (P \wedge Q) \vee (P \wedge R)$, and its dual.
+
+\end{itemize}
+
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% compile-command: "latex defineterms.tex && dvipdf defineterms.dvi"
+%%% End: 
