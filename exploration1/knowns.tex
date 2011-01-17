@@ -1,7 +1,7 @@
 \documentclass{article}
 \usepackage{times,amssymb,amsmath}
 \begin{document}
-$$f(2n) = f(n)$$\\
-$$f(2n - 1) = f(n)+1$$\\
-$$\sum_{n=s}^t$$\\
+$f(2n) = f(n)$\\
+$f(2n - 1) \neq f(n)+1$ given the case $n = 1$\\
+$$\sum_{n=1}^\infty \left( \frac{f(n)}{n} \right) - \sum_{n=1}^\infty \left( \frac{f(n)}{n+1} \right) = \sum_{n=1}^\infty \left( \frac{f(n)}{n} - \frac{f(n)}{n+1} \right) = \sum_{n=1}^\infty \left( \frac{f(n)}{n(n+1)} \right) $$\\
 \end{document}
