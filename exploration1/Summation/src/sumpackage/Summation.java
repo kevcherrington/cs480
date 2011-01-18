@@ -16,7 +16,7 @@ public class Summation
     */
    private SumFunction mFunction;
 
-   public BigDecimal evaluate(BigDecimal pStart, BigDecimal pEnd)
+   public BigDecimal sum(BigDecimal pStart, BigDecimal pEnd)
    {
       BigDecimal total = new BigDecimal(0);
 
@@ -27,7 +27,7 @@ public class Summation
       return total;
    }
 
-   public BigDecimal evaluate(BigDecimal pStart, BigDecimal pEnd, BigInteger pPrint)
+   public BigDecimal sum(BigDecimal pStart, BigDecimal pEnd, BigInteger pPrint)
    {
       BigDecimal total = new BigDecimal(0);
 
@@ -54,7 +54,7 @@ public class Summation
    public void run()
    {
       mFunction = new ProofProblem();
-      evaluate(SumLibrary.ONE, SumLibrary.UPPER_BOUND, SumLibrary.TEN_MILLION);
+      sum(SumLibrary.ONE, SumLibrary.UPPER_BOUND, SumLibrary.TEN_MILLION);
    }
 
    public static void main(String[] args)
