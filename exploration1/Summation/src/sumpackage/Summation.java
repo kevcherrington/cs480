@@ -1,9 +1,11 @@
 package sumpackage;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import res.SumLibrary;
@@ -125,11 +127,16 @@ public class Summation
    {
       mFunction = new ProofProblem();
       //sum(SumLibrary.ONE, SumLibrary.UPPER_BOUND, SumLibrary.TEN_MILLION);
-      print(SumLibrary.ONE, new BigDecimal(20));
+      show(SumLibrary.ONE, new BigDecimal(10));
+
+      //System.out.println(SumLibrary.toFraction(new BigDecimal(1.5)));
+
    }
 
    public static void main(String[] args)
+      throws IOException
    {
       new Summation().run();
+      
    }
 }
