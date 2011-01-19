@@ -1,15 +1,25 @@
 \documentclass{article}
 \usepackage{times,amssymb,amsmath}
 \begin{document}
-$$f(2n) = f(n)$$
-$$f(2n - 1) \neq f(n)+1 \to n = 1$$
-$$f(2n + 1) = f(n) + 1$$
+Prove:
+$$2\ln(2) = \sum_{n=1}^\infty \left( \frac{f(n)}{n(n+1)} \right)$$
+Given:
 $$\sum_{n=1}^\infty \left( \frac{f(n)}{n} \right) - \sum_{n=1}^\infty \left( \frac{f(n)}{n+1} \right) = \sum_{n=1}^\infty \left( \frac{f(n)}{n} - \frac{f(n)}{n+1} \right) = \sum_{n=1}^\infty \left( \frac{f(n)}{n(n+1)} \right) $$
-$$\sum_{n=1}^\infty \left( \frac{1}{2n - 1} - \frac{1}{2n} \right) = \ln(2)$$
+$$2\ln(2) = \sum_{n=1}^\infty \frac{1}{n} {2n \choose n} \frac{1}{2^{2n}}$$
 $$\sum_{n=1}^\infty \left( \frac{f(n)}{n(n+1)} \right) = \ln(4)$$
-$$\cdots = 2\ln(2)$$
-$$\cdots = 2 \cdot \sum_{n=1}^\infty \left( \frac{1}{2n - 1} - \frac{1}{2n} \right)$$
-
+$$\ln(2) = \sum_{n=1}^\infty \left( \frac{1}{2n - 1} - \frac{1}{2n} \right)$$
+$$\mathbf{2}\ln(2) = \mathbf{2} \cdot \sum_{n=1}^\infty \left( \frac{1}{2n - 1} - \frac{1}{2n} \right)$$
+$$\cdots = \mathbf{2} \cdot \sum_{n=1}^\infty \left( \frac{1}{\mathbf{2}n(2n-1)} \right)$$
+$$\cdots = \sum_{n=1}^\infty \left( \frac{1}{n(2n-1)} \right)$$
+$$\cdots = \sum_{n=1}^\infty \left( \frac{1}{2n^2 - n} \right)$$
+$$\cdots = \sum_{n=1}^\infty \left( \frac{1}{2n^2} - \frac{1}{n} \right)$$
+$$\cdots = \sum_{n=1}^\infty \left( \frac{1}{2n^2} \right) - \sum_{n=1}^\infty \left( \frac{1}{n} \right)$$
+$$2\ln(2) + \sum_{n=1}^\infty \left( \frac{1}{n} \right) = \sum_{n=1}^\infty \left( \frac{1}{2n^2} \right)$$
+Maybe useful:
+$$\ln(2) = \sum_{n=1}^\infty \left( \frac{(-1)^{n+1}}{n} \right) = \sum_{n=1}^\infty \left( \frac{1}{2n(2n-1)} \right)$$
+$$f(n \cdot 2^x) = f(2n) = f(n)$$
+$$f(2n-1) = f(n-1) +1$$
+$$f(2n+1) ?? f(n) +1$$
 Interesting but not useful:
 $$\sum_{n=1}^m \left( \frac{k}{n(n+1)} \right) = \frac{k \cdot m}{m+1}$$
 $$e^{\ln(4)} = 4$$
