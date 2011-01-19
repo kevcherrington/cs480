@@ -18,15 +18,18 @@ public class Summation
 
    public BigDecimal sum(BigDecimal pStart, BigDecimal pEnd)
    {
-      BigDecimal total = new BigDecimal(0);
-
-      for (BigDecimal i = pStart; 0 != i.compareTo(pEnd); i = i.add(SumLibrary.ONE))
-      {
-         total = total.add(mFunction.evaluate(i));
-      }
-      return total;
+      return sum(pStart, pEnd, pEnd.toBigInteger());
    }
 
+   /**
+    * Evaluate the summation of mFunction from pStart to pEnd, printing
+    * to the console every pPrint sums.
+    * 
+    * @param pStart
+    * @param pEnd
+    * @param pPrint
+    * @return
+    */
    public BigDecimal sum(BigDecimal pStart, BigDecimal pEnd, BigInteger pPrint)
    {
       BigDecimal total = new BigDecimal(0);
@@ -35,7 +38,7 @@ public class Summation
       {
          total = total.add(mFunction.evaluate(i));
 
-         if (i.toBigInteger().mod(SumLibrary.TEN_MILLION).equals(SumLibrary.BI_ZERO))
+         if (i.toBigInteger().mod(pPrint).equals(SumLibrary.BI_ZERO))
          {
             System.out.println(total);
          }
