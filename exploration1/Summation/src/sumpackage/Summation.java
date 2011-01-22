@@ -125,9 +125,9 @@ public class Summation
 
    public void run()
    {
-      mFunction = new ProofProblem();
-      //sum(SumLibrary.ONE, SumLibrary.UPPER_BOUND, SumLibrary.TEN_MILLION);
-      show(SumLibrary.ONE, new BigDecimal(10));
+      mFunction = new PopCountOverOddsMinusEvens();
+      sum(SumLibrary.ONE, SumLibrary.UPPER_BOUND, SumLibrary.TEN_MILLION);
+      //show(SumLibrary.ONE, new BigDecimal(10));
 
       //System.out.println(SumLibrary.toFraction(new BigDecimal(1.5)));
 
