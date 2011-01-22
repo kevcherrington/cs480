@@ -1,4 +1,5 @@
 \documentclass{article}
+\usepackage{hyperref}
 \usepackage{times,amssymb,amsmath}
 \input{../cs480preamble.tex}
 
@@ -23,6 +24,12 @@ $$\sum_{n=1}^\infty \left( \frac{f(n)}{n(n-1)} \right)=\sum_{n=1}^\infty \left( 
 $$\sum_{n=1}^\infty \left( \frac{f(n)}{n} \right)-\sum_{n=1}^\infty \left( \frac{f(n)}{n-1} \right)$$
 
 \section{Riemann Theorem(Riley)}
+By using Riemann's theorem we could rearrange the term so the summation would converge the $\ln 4$.  We had hoped that by using Riemann's theorem we could find a one to one mapping between our equation and the equation we had gotten from Riemann's theorem. However, after looking for the one to one mapping for the two equations we found that there was no such mapping.  
+\\*
+\\* For your view pleasure, Riemann's theorem is as follows \href{http://planetmath.org/encyclopedia/ConditionallyConvergentSeriesOfRealNumbersCanBeRearrangedToConvergeToAnyNumber.html}{{\bf (Online Reference}}):
+\\*
+\\*
+{\bf Theorem (Riemann series theorem)}. Let $(a _{n})$ be a sequence in $\mathbb{R}$ such that $ \sum_{n=1}^{\infty} a _{n} $  converges but $ \sum_{n=1}^{\infty} |a _{n}| = \infty$ , i.e,  $ \sum a_{n} $ is conditionally convergent. Let $\infty \leq \alpha < \beta \leq \infty$  be arbitrary. Then there exists a rearrangement ($a _{n}$) such that $ \displaystyle\liminf_{N}   \sum_{n`=1}^{N} a _{n`} = \alpha$ and $\displaystyle\sum_{n`=1}^{N} a _{n`} = \beta$
 
 \section{Summation Program (Devin)}
 
