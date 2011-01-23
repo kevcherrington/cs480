@@ -35,8 +35,13 @@ public class Summation
 
    public Summation(SumFunction pFunction)
    {
-      this(pFunction, SumLibrary.ONE, SumLibrary.UPPER_BOUND,
+      this(pFunction, SumLibrary.ZERO, SumLibrary.UPPER_BOUND,
          SumLibrary.TEN_MILLION);
+   }
+
+   public Summation(SumFunction pFunction, BigDecimal pStart)
+   {
+      this(pFunction, pStart, SumLibrary.UPPER_BOUND, SumLibrary.TEN_MILLION);
    }
 
    public Summation(SumFunction pFunction, BigDecimal pStart, BigDecimal pEnd)
@@ -111,11 +116,11 @@ public class Summation
       BigInteger pSegment)
    {
       BigRational total = new BigRational(0, 1);
-
       for (BigDecimal i = pStart; 0 != i.compareTo(pEnd); i = i.add(
             SumLibrary.ONE))
       {
          total = total.add(mFunction.evaluate(i));
+         
 
          if (i.toBigInteger().mod(pSegment).equals(SumLibrary.BI_ZERO))
          {

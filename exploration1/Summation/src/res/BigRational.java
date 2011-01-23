@@ -65,4 +65,14 @@ public class BigRational
    {
       return mDenominator;
    }
+
+   public void setNumerator(BigInteger pNumerator)
+   {
+      mNumerator = pNumerator;
+   }
+
+   public void setDenominator(BigInteger pDenominator)
+   {
+      mDenominator = pDenominator;
+   }
 }
