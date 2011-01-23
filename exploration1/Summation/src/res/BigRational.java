@@ -25,10 +25,28 @@ public class BigRational
       mDenominator = pDenominator;
    }
 
+   public void simplify()
+   {
+      BigInteger gcd = mNumerator.gcd(mDenominator);
+      if (gcd.compareTo(new BigInteger("0")) != 0)
+      {
+         mNumerator = mNumerator.divide(gcd);
+         mDenominator = mDenominator.divide(gcd);
+      }
+
+      if (SumLibrary.isNegative(mDenominator))
+      {
+         mNumerator = mNumerator.negate();
+         mDenominator = mDenominator.negate();
+      }
+   }
+
    public BigDecimal toBigDecimal()
    {
+      simplify();
       BigDecimal num = new BigDecimal(mNumerator);
       BigDecimal den = new BigDecimal(mDenominator);
+
       return SumLibrary.bigDivide(num, den);
    }
 
@@ -44,33 +62,27 @@ public class BigRational
       BigInteger bc = mDenominator.multiply(pAugend.getNumerator());
       BigInteger bd = mDenominator.multiply(pAugend.getDenominator());
 
-      if (SumLibrary.isNegative(mDenominator))
-      {
-         mNumerator = mNumerator.negate();
-         mDenominator = mDenominator.negate();
-      }
-      
       return new BigRational(ad.add(bc), bd);
    }
 
-
-
-
    public String toFraction()
    {
+      simplify();
       return mNumerator.toString() + "/" + mDenominator.toString();
    }
 
    public String toLatex()
-   { 
-      String latex = " {" + mNumerator.toString() + "\\over " + mDenominator.toString() + "} " ;
-      
+   {
+      simplify();
+      String latex = " {" + mNumerator.toString() + "\\over " + mDenominator.
+         toString() + "} ";
+
       if (SumLibrary.isNegative(mNumerator))
       {
          latex = "\\left(- {" + mNumerator.abs().toString() + "\\over"
             + mDenominator.toString() + "}\\right)";
       }
-      
+
       return latex;
    }
 
