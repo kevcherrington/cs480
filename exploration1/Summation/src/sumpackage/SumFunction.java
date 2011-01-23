@@ -1,6 +1,7 @@
 package sumpackage;
 
 import java.math.BigDecimal;
+import res.BigRational;
 
 /**
  *
@@ -14,5 +15,5 @@ public interface SumFunction
     * @param n
     * @return f(n)
     */
-   BigDecimal evaluate(BigDecimal n);
+   public BigRational evaluate(BigDecimal n);
 }

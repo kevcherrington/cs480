@@ -1,6 +1,8 @@
 package sumpackage;
 
 import java.math.BigDecimal;
+import java.math.BigInteger;
+import res.BigRational;
 import res.SumLibrary;
 
 /**
@@ -11,11 +13,11 @@ public class PopCountOverOddsMinusEvens
    implements SumFunction
 {
 
-   public BigDecimal evaluate(BigDecimal n)
+   public BigRational evaluate(BigDecimal n)
    {
       BigDecimal twoN = n.multiply(new BigDecimal(2));
-      BigDecimal divisor = twoN.multiply(twoN.add(new BigDecimal(1)));
-      BigDecimal result = new BigDecimal(n.toBigInteger().bitCount()).divide(divisor,  SumLibrary.PRECISION,BigDecimal.ROUND_HALF_DOWN);
-      return result;
+      BigInteger num = SumLibrary.popCount(n);
+      BigInteger den = twoN.multiply(twoN.add(new BigDecimal(1))).toBigInteger();
+      return new BigRational(num, den);
    }
 }

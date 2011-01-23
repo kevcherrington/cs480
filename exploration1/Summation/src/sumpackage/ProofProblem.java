@@ -1,6 +1,8 @@
 package sumpackage;
 
 import java.math.BigDecimal;
+import java.math.BigInteger;
+import res.BigRational;
 
 import res.SumLibrary;
 
@@ -11,9 +13,14 @@ import res.SumLibrary;
 public class ProofProblem
    implements SumFunction
 {
-   public BigDecimal evaluate(BigDecimal n)
+   public BigRational evaluate(BigDecimal n)
    {
-      return new BigDecimal(n.toBigInteger().bitCount()).
-                     divide(n.multiply((n.add(SumLibrary.ONE))),SumLibrary.PRECISION,BigDecimal.ROUND_HALF_DOWN);
+      BigInteger num;
+      BigInteger den;
+
+      num = SumLibrary.popCount(n);
+      den = n.multiply((n.add(SumLibrary.ONE))).toBigInteger();
+
+      return new BigRational(num, den);
    }
 }

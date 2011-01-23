@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><umlet_diagram><help_text>// Uncomment the following line to change the fontsize:
+// fontsize=14
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+// Welcome to UMLet!
+//
+// Double-click on UML elements to add them to the diagram, or to copy them
+// Edit elements by modifying the text in this panel
+// Hold Ctrl to select multiple elements
+// Use Ctrl+mouse to select via lasso
+//
+// Use ± or Ctrl+mouse wheel to zoom
+// Drag a whole relation at its central square icon
+//
+// Press Ctrl+C to copy the whole diagram to the system clipboard (then just paste it to, eg, Word)
+// Edit the files in the "palettes" directory to create your own element palettes
+//
+// Select "Custom Elements &gt; New..." to create new element types
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// This text will be stored with each diagram;  use it for notes.</help_text><zoom_level>10</zoom_level><element><type>com.umlet.element.base.Class</type><coordinates><x>510</x><y>110</y><w>490</w><h>270</h></coordinates><panel_attributes>sumpackage::Summation
+--
++BigDecimal sum()
++BigDecimal sumShow()
++void show()
++void print()
++BigDecimal sum(BigDecimal pEnd)
++void show(BigDecimal pEnd)
++void print(BigDecimal pEnd)
++void run()
+--
+-SumFunction mFunction
+-BigDecimal mStart
+-BigDecimal mEnd
+-BigDecimal mSegment
+-String mHeader
+-String mFileName
+-BigRational LastSum
+
+
+</panel_attributes><additional_attributes/></element><element><type>com.umlet.element.base.Class</type><coordinates><x>80</x><y>130</y><w>260</w><h>50</h></coordinates><panel_attributes>&lt;&lt;sumpackage::SumFunction&gt;&gt;
+--
++BigRational evaluate(BigDecimal n)
+
+
+
+</panel_attributes><additional_attributes/></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>310</x><y>130</y><w>220</w><h>50</h></coordinates><panel_attributes/><additional_attributes>200;30;30;30</additional_attributes></element><element><type>com.umlet.element.base.Class</type><coordinates><x>460</x><y>400</y><w>490</w><h>200</h></coordinates><panel_attributes>res::SumLibrary
+--
++static BigDecimal bigDivide(BigDecimal pDividend, BigDecimal pDivisor)
++static String toFraction(BigDecimal mVal)
++static String toLatex(BigDecimal mVal)
++static BigDecimal gcdBigDecimal(BigDecimal pM, BigDecimal pN)
+--
++static final BigDecimal ONE
++static final BigDecimal UPPER_BOUND
++static final BigDecimal ZERO
++static final BigInteger BI_ZERO
++static final BigInteger TEN_MILLION
++static final int INT_ZERO
++static final int PRECISION
+
+
+</panel_attributes><additional_attributes/></element><element><type>com.umlet.element.base.Class</type><coordinates><x>10</x><y>270</y><w>260</w><h>50</h></coordinates><panel_attributes>sumpackage::ProofProblem
+--
++BigRational evaluate(BigDecimal n)
+
+
+
+</panel_attributes><additional_attributes/></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>100</x><y>150</y><w>120</w><h>140</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>100;30;100;80;30;80;30;120</additional_attributes></element><element><type>com.umlet.element.base.Class</type><coordinates><x>250</x><y>40</y><w>180</w><h>70</h></coordinates><panel_attributes>sumpackage::SumStart
+--
++static void main()
+
+
+
+</panel_attributes><additional_attributes/></element><element><type>com.umlet.element.base.Class</type><coordinates><x>240</x><y>400</y><w>180</w><h>120</h></coordinates><panel_attributes>res::BigRational
+--
++BigDecimal divide()
++String toFraction()
++String toLatex()
+--
+-BigInteger mNumerator
+-BigInteger mDenominator
+
+
+</panel_attributes><additional_attributes/></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>400</x><y>50</y><w>130</w><h>90</h></coordinates><panel_attributes/><additional_attributes>110;70;60;70;60;30;30;30</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>300</x><y>240</y><w>230</w><h>180</h></coordinates><panel_attributes/><additional_attributes>210;30;30;30;30;160</additional_attributes></element></umlet_diagram>

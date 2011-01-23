@@ -1,6 +1,8 @@
 package sumpackage;
 
 import java.math.BigDecimal;
+import java.math.BigInteger;
+import res.BigRational;
 import res.SumLibrary;
 /**
  *
@@ -10,8 +12,12 @@ public class OneOverPopCount
    implements SumFunction
 {
 
-   public BigDecimal evaluate(BigDecimal n)
+   public BigRational evaluate(BigDecimal n)
    {
-      return SumLibrary.ONE.divide(new BigDecimal(n.toBigInteger().bitCount()), SumLibrary.PRECISION,BigDecimal.ROUND_HALF_DOWN);
+      BigInteger num;
+      BigInteger den;
+      num = SumLibrary.ONE.toBigInteger();
+      den = SumLibrary.popCount(n);
+      return new BigRational(num, den);
    }
 }

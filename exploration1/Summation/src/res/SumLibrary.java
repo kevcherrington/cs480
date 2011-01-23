@@ -18,6 +18,17 @@ public class SumLibrary
    public static final int INT_ZERO = 0;
    public static final int PRECISION = 100;
 
+   public static BigDecimal bigDivide(BigDecimal pDividend, BigDecimal pDivisor)
+   {
+      return pDividend.divide(pDivisor, SumLibrary.PRECISION,
+         BigDecimal.ROUND_HALF_DOWN);
+   }
+
+   public static BigInteger popCount(BigDecimal n)
+   {
+       return new BigDecimal(n.toBigInteger().bitCount()).toBigInteger();
+   }
+
    /**
     * Converts a BigDecimal into a String containing the fractional form
     * of the value.
@@ -51,7 +62,7 @@ public class SumLibrary
       gcd = gcdBigDecimal(numerator, denominator);
       numerator = numerator.divide(gcd);
       denominator = denominator.divide(gcd);
-      
+
       return numerator.toString() + "/" + denominator.toString();
    }
 
@@ -64,19 +75,19 @@ public class SumLibrary
    {
       //while pM is not equal to pN
       while (0 != pM.compareTo(pN))
-		{
+      {
          //if pM is greater than pN
          if (1 == pM.compareTo(pN))
-			{
-				pM = pM.subtract(pN);
-			}
+         {
+            pM = pM.subtract(pN);
+         }
 
          //if pN is greater than pM
-			if (1 == pN.compareTo(pM))
-			{
-				pN = pN.subtract(pM);
-			}
-		}
-		return pM;
+         if (1 == pN.compareTo(pM))
+         {
+            pN = pN.subtract(pM);
+         }
+      }
+      return pM;
    }
 }

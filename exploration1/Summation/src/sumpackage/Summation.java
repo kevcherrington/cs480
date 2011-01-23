@@ -1,14 +1,13 @@
 package sumpackage;
 
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import res.SumLibrary;
+import res.BigRational;
 
 /**
  *
@@ -21,22 +20,82 @@ public class Summation
     * The closed form function to run through a summation
     */
    private SumFunction mFunction;
-   /** The header to print at the top of the file. */
-   protected String mHeader;
-   /** The file path to write to. */
+   /** 
+    * The header to print at the top of the file.
+    */
+   private String mHeader;
+   /** 
+    * The file path to write to.
+    */
    private String mFileName;
+   private BigDecimal mStart;
+   private BigDecimal mEnd;
+   private BigInteger mSegment;
+   private BigRational mLastSum;
 
-   public Summation()
+   public Summation(SumFunction pFunction)
+   {
+      this(pFunction, SumLibrary.ONE, SumLibrary.UPPER_BOUND,
+         SumLibrary.TEN_MILLION);
+   }
+
+   public Summation(SumFunction pFunction, BigDecimal pStart, BigDecimal pEnd)
+   {
+      this(pFunction, pStart, pEnd, SumLibrary.TEN_MILLION);
+   }
+
+   public Summation(SumFunction pFunction, BigDecimal pStart, BigDecimal pEnd,
+      BigInteger pSegment)
+   {
+      this(pFunction, pStart, pEnd, pSegment, "sum");
+   }
+
+   public Summation(SumFunction pFunction, BigDecimal pStart, BigDecimal pEnd,
+      BigInteger pSegment, String pFileName)
    {
       mHeader = "\\documentclass{article}\n"
          + "\\usepackage{times,amssymb,amsmath}\n"
          + "\\begin{document}\n";
-      mFileName = "sum.tex";
+      mFileName = pFileName + ".tex";
+      mFunction = pFunction;
+      mStart = pStart;
+      mEnd = pEnd;
+      mSegment = pSegment;
    }
 
-   public BigDecimal sum(BigDecimal pStart, BigDecimal pEnd)
+   public BigRational sum()
    {
-      return sum(pStart, pEnd, pEnd.toBigInteger());
+      return sum(mStart, mEnd, mEnd.toBigInteger());
+   }
+
+   public BigRational sumShow()
+   {
+      return sum(mStart, mEnd, mSegment);
+   }
+
+   public void show()
+   {
+      show(mStart, mEnd);
+   }
+
+   public void print()
+   {
+      print(mStart, new BigDecimal(100));
+   }
+
+   public BigRational sum(BigDecimal pEnd)
+   {
+      return sum(mStart, pEnd, pEnd.toBigInteger());
+   }
+
+   public void show(BigDecimal pEnd)
+   {
+      show(mStart, pEnd);
+   }
+
+   public void print(BigDecimal pEnd)
+   {
+      print(mStart, pEnd);
    }
 
    /**
@@ -48,18 +107,19 @@ public class Summation
     * @param pPrint
     * @return
     */
-   public BigDecimal sum(BigDecimal pStart, BigDecimal pEnd, BigInteger pPrint)
+   public BigRational sum(BigDecimal pStart, BigDecimal pEnd,
+      BigInteger pSegment)
    {
-      BigDecimal total = new BigDecimal(0);
+      BigRational total = new BigRational(0, 1);
 
       for (BigDecimal i = pStart; 0 != i.compareTo(pEnd); i = i.add(
             SumLibrary.ONE))
       {
          total = total.add(mFunction.evaluate(i));
 
-         if (i.toBigInteger().mod(pPrint).equals(SumLibrary.BI_ZERO))
+         if (i.toBigInteger().mod(pSegment).equals(SumLibrary.BI_ZERO))
          {
-            System.out.println(total);
+            System.out.println(total.toBigDecimal());
          }
       }
       return total;
@@ -70,7 +130,7 @@ public class Summation
       for (BigDecimal i = pStart; 0 != i.compareTo(pEnd); i = i.add(
             SumLibrary.ONE))
       {
-         System.out.println(SumLibrary.toFraction(mFunction.evaluate(i)));
+         System.out.println(mFunction.evaluate(i).toFraction());
       }
    }
 
@@ -101,11 +161,14 @@ public class Summation
             output.newLine();
          }
 
+         output.write("$$" + mFunction.evaluate(pStart).toLatex() + " ");
+         pStart = pStart.add(SumLibrary.ONE);
+
          //output the summation to the file
          for (BigDecimal i = pStart; 0 != i.compareTo(pEnd); i = i.add(
                SumLibrary.ONE))
          {
-            output.write(SumLibrary.toLatex(mFunction.evaluate(i)) + " ");
+            output.write("+ " + mFunction.evaluate(i).toLatex() + " ");
 
             //when to print a new line
             if (i.toBigInteger().mod(line).equals(SumLibrary.BI_ZERO))
@@ -113,6 +176,7 @@ public class Summation
                output.newLine();
             }
          }
+         output.write("$$");
          output.newLine();
          output.write("\\end{document}");
          output.close();
@@ -125,18 +189,6 @@ public class Summation
 
    public void run()
    {
-      mFunction = new PopCountOverOddsMinusEvens();
-      sum(SumLibrary.ONE, SumLibrary.UPPER_BOUND, SumLibrary.TEN_MILLION);
-      //show(SumLibrary.ONE, new BigDecimal(10));
-
-      //System.out.println(SumLibrary.toFraction(new BigDecimal(1.5)));
-
-   }
-
-   public static void main(String[] args)
-      throws IOException
-   {
-      new Summation().run();
-      
+      print();
    }
 }
