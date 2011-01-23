@@ -29,6 +29,16 @@ public class SumLibrary
        return new BigDecimal(n.toBigInteger().bitCount()).toBigInteger();
    }
 
+   public static boolean isNegative(BigInteger pNum)
+   {
+      boolean isNegative = false;
+
+      if (pNum.compareTo(new BigInteger("0")) == -1)
+      {
+         isNegative = true;
+      }
+      return isNegative;
+   }
    /**
     * Converts a BigDecimal into a String containing the fractional form
     * of the value.

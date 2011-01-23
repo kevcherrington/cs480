@@ -11,6 +11,6 @@ public class SumStart
    public static void main(String[] args)
       throws IOException
    {
-      new Summation(new ProofProblem()).run();
+      new Summation(new HalfToTheNTimeHarmonic()).run();
    }
 }

@@ -2,6 +2,7 @@ package res;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import res.SumLibrary;
 
 /**
  *
@@ -42,9 +43,18 @@ public class BigRational
       BigInteger ad = mNumerator.multiply(pAugend.getDenominator());
       BigInteger bc = mDenominator.multiply(pAugend.getNumerator());
       BigInteger bd = mDenominator.multiply(pAugend.getDenominator());
+
+      if (SumLibrary.isNegative(mDenominator))
+      {
+         mNumerator = mNumerator.negate();
+         mDenominator = mDenominator.negate();
+      }
       
       return new BigRational(ad.add(bc), bd);
    }
+
+
+
 
    public String toFraction()
    {
@@ -53,7 +63,15 @@ public class BigRational
 
    public String toLatex()
    { 
-      return "\\frac{" + mNumerator.toString() + "}{" + mDenominator.toString() + "}";
+      String latex = " {" + mNumerator.toString() + "\\over " + mDenominator.toString() + "} " ;
+      
+      if (SumLibrary.isNegative(mNumerator))
+      {
+         latex = "\\left(- {" + mNumerator.abs().toString() + "\\over"
+            + mDenominator.toString() + "}\\right)";
+      }
+      
+      return latex;
    }
 
    public BigInteger getNumerator()

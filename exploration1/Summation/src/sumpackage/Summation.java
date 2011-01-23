@@ -85,7 +85,7 @@ public class Summation
 
    public void print()
    {
-      print(mStart, new BigDecimal(100));
+      print(mStart, new BigDecimal(250));
    }
 
    public BigRational sum(BigDecimal pEnd)
@@ -165,7 +165,6 @@ public class Summation
             output.write(mHeader);
             output.newLine();
          }
-
          output.write("$$" + mFunction.evaluate(pStart).toLatex() + " ");
          pStart = pStart.add(SumLibrary.ONE);
 
@@ -178,7 +177,9 @@ public class Summation
             //when to print a new line
             if (i.toBigInteger().mod(line).equals(SumLibrary.BI_ZERO))
             {
+               output.write("$$");
                output.newLine();
+               output.write("$$");
             }
          }
          output.write("$$");
