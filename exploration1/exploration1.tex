@@ -110,11 +110,33 @@ $$
 As it can be seen such a mapping was not as easy to find as I had hoped. Even so my program can still be used as a tool to assist us in quick examination of
 summations that may be explored in the future. UML diagrams and source code can be found on the github we created for this class.
 
-\section{Telescoping (Brandon)}
+\section{Telescoping}
 The first attempt at telescoping the problem was to use the expanded version of the equation: $\sum_{n=1}^\infty \frac{f(n)}{n} - \frac{f(n)}{n+1}$. These turned out to be:\\
 $$\left(\frac{1}{1}-\frac{1}{2}\right)+\left(\frac{1}{2}-\frac{1}{3}\right)+\left(\frac{2}{3}-\frac{2}{4}\right)+\left(\frac{1}{4}-\frac{1}{5}\right)+\left(\frac{2}{5}-\frac{2}{6}\right)+\cdots$$
 $$\frac{1}{1} + \left(-\frac{1}{2}+\frac{1}{2}\right) + \left(-\frac{1}{3}+\frac{2}{3}\right) +\left(-\frac{2}{4}+\frac{1}{4}\right)+\left(-\frac{1}{5}+\frac{2}{5}\right)+\cdots$$
-$$\frac{1}{1}+0+\frac{1}{3}+\frac{-1}{4}+\frac{1}{5}+\frac{}{}+\frac{}{}+\frac{}{}+\frac{}{}+\frac{}{}+\frac{}{}+\cdots$$
-However, upon initial inspection, the cancellations did not lead to anything interesting.
+$$\frac{1}{1}+0+\frac{1}{3}+\frac{-1}{4}+\frac{1}{5}+0+\frac{1}{7}+\frac{-2}{8}+\frac{1}{9}+0+\frac{1}{11}+\frac{-1}{12}+\cdots$$
+Upon initial inspection, the cancellations did not lead to anything interesting. Then we were given the hint about Riemann's Theorem. When using the Riemann Theorem to generate $\ln(4)$, a program generated the sum:
+$${1 \over 1}+{1 \over 3}+{1 \over 5}+\left(- {1 \over 2}\right)+{1 \over 7}+{1 \over 9}+{1 \over 11}+{1 \over 13}+\left(- {1 \over 4}\right)+ \cdots$$
+This reminded me of:
+$$\frac{1}{1}+\frac{1}{3}+\frac{1}{5}+\left(\frac{-1}{4}+\frac{-2}{8}\right)+\frac{1}{7}+\frac{1}{9}+\frac{1}{11}+\frac{1}{13}+\left(\frac{-1}{12}\right)+\cdots$$
+However, this does not create the same sequence of fractions.
 
+\section{Base Summation}
+Another method used to decompose this summation was to remove the function that caused the problems.
+$$\sum_{n=1}^\infty \left( \frac{1}{n(n-1)} \right)$$
+This summation converges on 1. Upon further investigation, the summation can be shown to follow this formula:
+$$\sum_{n=1}^m \left( \frac{C}{n(n+1)} \right) = \frac{C \cdot m}{m+1}$$
+Where $C$ is a constant. Which can be removed as:
+$$\sum_{n=1}^m \left( \frac{1}{n(n+1)} \right) = \frac{m}{m+1}$$
+This works for $m=1$ because:
+$$\frac{1}{1(1+1)}=\frac{1}{1+1}$$
+And then:
+$$\sum_{n=1}^{m+1} \left( \frac{1}{n(n+1)} \right) = \sum_{n=1}^{m} \left( \frac{1}{n(n+1)} \right) + \frac{1}{(m+1)(m+1+1)}$$
+$$\cdots = \frac{m}{m+1} + \frac{1}{(m+1)(m+2)}$$
+$$\cdots = \frac{m(m+2)}{(m+1)(m+2)} + \frac{1}{(m+1)(m+2)}$$
+$$\cdots = \frac{m(m+2) + 1}{(m+1)(m+2)}$$
+$$\cdots = \frac{m^2+2m+1}{(m+1)(m+2)}$$
+$$\cdots = \frac{(m+1)^2}{(m+1)(m+2)}$$
+$$\cdots = \frac{(m+1)}{(m+2)}$$
+$$\sum_{n=1}^{m+1} \left( \frac{1}{n(n+1)} \right) = \frac{(m+1)}{(m+1)+1}$$
 \end{document}
