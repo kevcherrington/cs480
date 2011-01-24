@@ -23,6 +23,7 @@ These are some assumptions we made in our first attempt to solve the problem wit
 \subsection{Flawed reasoning}
 $$\sum_{n=1}^\infty \left( \frac{f(n)}{n(n-1)} \right)=\sum_{n=1}^\infty \left( \frac{f(n)}{n} \right)-\sum_{n=1}^\infty \left( \frac{f(n)}{n-1} \right)$$\\
 $$=\sum_{n=1}^\infty \left( \frac{f(n)}{n} \right)-\sum_{n=1}^\infty \left( \frac{f(n)}{n+1} \right)$$\\
+Split summation into odds and evens
 $$=\sum_{n=1}^\infty \left( \frac{f(2n)}{2n} \right)+sum_{n=1}^\infty \left( \frac{f(2n-1)}{2n-1} \right)
 -\sum_{n=1}^\infty \left( \frac{f(2n)}{2n+1} \right)+\sum_{n=1}^\infty \left( \frac{f(2n-1)}{2n} \right)$$\\
 $$=\sum_{n=1}^\infty \left( \frac{f(n)}{2n} \right)+sum_{n=1}^\infty \left( \frac{f(n)+1}{2n-1} \right)
