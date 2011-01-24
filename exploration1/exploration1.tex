@@ -137,11 +137,9 @@ $$\frac{1}{1}+\frac{1}{3}+\frac{1}{5}+\left(\frac{-1}{4}+\frac{-2}{8}\right)+\fr
 However, this does not create the same sequence of fractions.
 
 \section{Base Summation}
-Another method used to decompose this summation was to remove the function that caused the problems.
+Another method used to decompose this summation was to remove the PopCount function:
 $$\sum_{n=1}^\infty \left( \frac{1}{n(n-1)} \right)$$
 This summation converges on 1. Upon further investigation, the summation can be shown to follow this formula:
-$$\sum_{n=1}^m \left( \frac{C}{n(n+1)} \right) = \frac{C \cdot m}{m+1}$$
-Where $C$ is a constant. Which can be removed as:
 $$\sum_{n=1}^m \left( \frac{1}{n(n+1)} \right) = \frac{m}{m+1}$$
 This works for $m=1$ because:
 $$\frac{1}{1(1+1)}=\frac{1}{1+1}$$
@@ -154,4 +152,7 @@ $$\cdots = \frac{m^2+2m+1}{(m+1)(m+2)}$$
 $$\cdots = \frac{(m+1)^2}{(m+1)(m+2)}$$
 $$\cdots = \frac{(m+1)}{(m+2)}$$
 $$\sum_{n=1}^{m+1} \left( \frac{1}{n(n+1)} \right) = \frac{(m+1)}{(m+1)+1}$$
+Because the summation converges on one as it approaches infinity, it can be multiplied by some constant, $C$, to approach any number:
+$$C\cdot\sum_{n=1}^m \left( \frac{1}{n(n+1)} \right) = \sum_{n=1}^m \left( \frac{C}{n(n+1)} \right) = \frac{C \cdot m}{m+1}$$
+However, this does not prove anything for the assigned summation, because the PopCount function does not evaluate to a constant.
 \end{document}
