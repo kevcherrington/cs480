@@ -38,13 +38,23 @@ $$=\sum_{n=1}^\infty \left( \frac{-1}{2n} \right)
 $$=\sum_{n=1}^\infty \left( \frac{1}{2n-1} \right)
 -\sum_{n=1}^\infty \left( \frac{1}{2n} \right)$$\\
 
-\section{Riemann Theorem(Riley)}
-By using Riemann's theorem we could rearrange the term so the summation would converge the $\ln 4$.  We had hoped that by using Riemann's theorem we could find a one to one mapping between our equation and the equation we had gotten from Riemann's theorem. However, after looking for the one to one mapping for the two equations we found that there was no such mapping.  
+\section{Riemann Theorem(Riley and Kevin)}
+As was pointed out to us by Brother Neff if we used Riemann's theorem we could rearrange the terms of the harmonics series so the summation would converge to the $\ln 4$.  We hoped that once we had this new arrangement we would be able to find a one to one mapping between our equation and the equation we had gotten from Riemann's theorem. However, once we had the summation produced using Riemann's theorem we found that there was no such mapping or if there was one it was not easily apparent. Included is the first bit from the summation produced by Riemann's theorem. When compared the summation provided in the Summation Program section it is easily apparent that a one to one mapping if possible will be difficult to find. We determined that our efforts were better spent pursuing other avenues of thought.
 \\*
-\\* For your view pleasure, Riemann's theorem is as follows \href{http://planetmath.org/encyclopedia/ConditionallyConvergentSeriesOfRealNumbersCanBeRearrangedToConvergeToAnyNumber.html}{{\bf (Online Reference}}):
+\\* For your viewing pleasure, Riemann's theorem is as follows \href{http://planetmath.org/encyclopedia/ConditionallyConvergentSeriesOfRealNumbersCanBeRearrangedToConvergeToAnyNumber.html}{{\bf(Online Reference)}}:
 \\*
 \\*
+
 {\bf Theorem (Riemann series theorem)}. Let $(a _{n})$ be a sequence in $\mathbb{R}$ such that $ \sum_{n=1}^{\infty} a _{n} $  converges but $ \sum_{n=1}^{\infty} |a _{n}| = \infty$ , i.e,  $ \sum a_{n} $ is conditionally convergent. Let $\infty \leq \alpha < \beta \leq \infty$  be arbitrary. Then there exists a rearrangement ($a _{n}$) such that $ \displaystyle\liminf_{N}   \sum_{n`=1}^{N} a _{n`} = \alpha$ and $\displaystyle\sum_{n`=1}^{N} a _{n`} = \beta$
+
+The summation acquired using Riemann's theorem:
+$${1 \over 1}+{1 \over 3}+{1 \over 5}+\left(- {1 \over 2}\right)+{1 \over 7}+{1 \over 9}+{1 \over 11}+{1 \over 13}+\left(- {1 \over 4}\right)+ $$
+$${1 \over 15}+{1 \over 17}+{1 \over 19}+{1 \over 21}+\left(- {1 \over 6}\right)+{1 \over 23}+{1 \over 25}+{1 \over 27}+{1 \over 29}+\left(- {1 \over 8}\right)+ $$
+$${1 \over 31}+{1 \over 33}+{1 \over 35}+{1 \over 37}+\left(- {1 \over 10}\right)+{1 \over 39}+{1 \over 41}+{1 \over 43}+{1 \over 45}+\left(- {1 \over 12}\right)+ $$
+$${1 \over 47}+{1 \over 49}+{1 \over 51}+{1 \over 53}+\left(- {1 \over 14}\right)+{1 \over 55}+{1 \over 57}+{1 \over 59}+{1 \over 61}+\left(- {1 \over 16}\right)+ $$
+$${1 \over 63}+{1 \over 65}+{1 \over 67}+{1 \over 69}+\left(- {1 \over 18}\right)+{1 \over 71}+{1 \over 73}+{1 \over 75}+{1 \over 77}+\left(- {1 \over 20}\right)+ $$
+$${1 \over 79}+{1 \over 81}+{1 \over 83}+{1 \over 85}+\left(- {1 \over 22}\right)+{1 \over 87}+{1 \over 89}+{1 \over 91}+{1 \over 93}+\left(- {1 \over 24}\right)+ ... $$
+
 
 \section{Summation Program (Devin)}
 On account of our summation driven approach to solve this proof problem I thought that it would be prudent to develop a software artifact that could make 
@@ -152,7 +162,7 @@ $$\cdots = \frac{m^2+2m+1}{(m+1)(m+2)}$$
 $$\cdots = \frac{(m+1)^2}{(m+1)(m+2)}$$
 $$\cdots = \frac{(m+1)}{(m+2)}$$
 $$\sum_{n=1}^{m+1} \left( \frac{1}{n(n+1)} \right) = \frac{(m+1)}{(m+1)+1}$$
-Because the summation converges on one as it approaches infinity, it can be multiplied by some constant, $C$, to approach any number:
+Because the summation converges on 1 as it approaches infinity, it can be multiplied by some constant, $C$, to approach any number, $C$:
 $$C\cdot\sum_{n=1}^m \left( \frac{1}{n(n+1)} \right) = \sum_{n=1}^m \left( \frac{C}{n(n+1)} \right) = \frac{C \cdot m}{m+1}$$
 However, this does not prove anything for the assigned summation, because the PopCount function does not evaluate to a constant.
 \end{document}
