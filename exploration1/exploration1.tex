@@ -79,9 +79,26 @@ $$\cdots =\frac{1}{2}+\sum_{n=1}^\infty \left( \frac{f(n)-n}{2n(n+1)} \right)+\s
 
 This answer is technically correct (we believe), unless it falls prey to the rearrangement theorem. However, it appears to be a dead end. We haven't yet made the following logical leap:
 
-$$\frac{1}{2}+\sum_{n=1}^\infty \left( \frac{f(n)-n}{2n(n+1)} \right)+\sum_{n=1}^\infty \left( \frac{1}{2n+1} \right)?=2 \left( \sum_{n=1}^\infty \left( \frac{1}{2n-1)} \right)+\sum_{n=1}^\infty \left( \frac{1}{2n} \right) \right)$$\\
+$$\frac{1}{2}+\sum_{n=1}^\infty \left( \frac{f(n)-n}{2n(n+1)} \right)+\sum_{n=1}^\infty \left( \frac{1}{2n+1} \right)?=2 \left( \sum_{n=1}^\infty \left( \frac{1}{2n-1} \right)+\sum_{n=1}^\infty \left( \frac{1}{2n} \right) \right)$$\\
 
 All attempts to crack this nut have proved vain. However, we believe (or at least Graham does) that an algebraic solution is possible. 
+
+
+\section{Divide and Conquer? (Joe)}
+
+Some of the preliminary efforts lead us to a summation of harmonic "odds minus evens" that converges to $2\ln(2)$. This behavior, similar enough to our summations sparked the notion that:
+$$ \sum_{n=1}^\infty \frac{ \left( \frac{f(n)}{n(n+1)} \right)} {\left( \frac{1}{2n(2n+1)} \right)} = 2$$ \newline
+However, out attempts to show this algebraically were unsuccessful. This is due to the fact that  the popcount does not have a very nice explicit equation. Turns out it’s hard to describe mathematically how many bits are 1 in a given string of bits. \newline
+
+This also removes the off-chance that one could introduce a scalar 2 into our summation and arrive at the "odds minus evens" or vice versa, factor out a 2 from the "odds minus evens" and arrive at our summation.
+$$2\left(   \frac{1}{2n(2n+1)} \right) =  \frac{f(n)}{n(n+1)}$$
+$$ 2 \ln(2) = \ln(4)$$
+
+
+Also, given that 1/n(n+1) converges to one, we can see putting the popcount in the numerator
+alters the convergence slightly $(\ln(4) - 1 = .386...)$. The convergence value isn't much larger because any given popcount value at n is only a slightly larger numerator than 1 for any give large integer. For example: $1/2^{32}(2^{32}+1)$ has a very similar value to $32/2^{32}(2^{32}+1)$. The effect that it does have will be significant at the beginning of the summation, and less significant as the denominators get larger. 
+
+
 
 \section{Riemann Theorem(Riley and Kevin)}
 As was pointed out to us by Brother Neff if we used Riemann's theorem we could rearrange the terms of the harmonics series so the summation would converge to the $\ln 4$.  We hoped that once we had this new arrangement we would be able to find a one to one mapping between our equation and the equation we had gotten from Riemann's theorem. However, once we had the summation produced using Riemann's theorem we found that there was no such mapping or if there was one it was not easily apparent. Included is the first bit from the summation produced by Riemann's theorem. When compared the summation provided in the Summation Program section it is easily apparent that a one to one mapping if possible will be difficult to find. We determined that our efforts were better spent pursuing other avenues of thought.
@@ -180,7 +197,7 @@ $$
 As it can be seen such a mapping was not as easy to find as I had hoped. Even so my program can still be used as a tool to assist us in quick examination of
 summations that may be explored in the future. UML diagrams and source code can be found on the github we created for this class.
 
-\section{Telescoping}
+\section{Telescoping (Brandon)} 
 The first attempt at telescoping the problem was to use the expanded version of the equation: $\sum_{n=1}^\infty \frac{f(n)}{n} - \frac{f(n)}{n+1}$. These turned out to be:\\
 $$\left(\frac{1}{1}-\frac{1}{2}\right)+\left(\frac{1}{2}-\frac{1}{3}\right)+\left(\frac{2}{3}-\frac{2}{4}\right)+\left(\frac{1}{4}-\frac{1}{5}\right)+\left(\frac{2}{5}-\frac{2}{6}\right)+\cdots$$
 $$\frac{1}{1} + \left(-\frac{1}{2}+\frac{1}{2}\right) + \left(-\frac{1}{3}+\frac{2}{3}\right) +\left(-\frac{2}{4}+\frac{1}{4}\right)+\left(-\frac{1}{5}+\frac{2}{5}\right)+\cdots$$
@@ -191,7 +208,7 @@ This reminded me of:
 $$\frac{1}{1}+\frac{1}{3}+\frac{1}{5}+\left(\frac{-1}{4}+\frac{-2}{8}\right)+\frac{1}{7}+\frac{1}{9}+\frac{1}{11}+\frac{1}{13}+\left(\frac{-1}{12}\right)+\cdots$$
 However, this does not create the same sequence of fractions.
 
-\section{Base Summation}
+\section{Base Summation (Brandon)}
 Another method used to decompose this summation was to remove the PopCount function:
 $$\sum_{n=1}^\infty \left( \frac{1}{n(n-1)} \right)$$
 This summation converges on 1. Upon further investigation, the summation can be shown to follow this formula:
