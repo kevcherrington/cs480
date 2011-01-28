@@ -1,0 +1,41 @@
+\documentclass{article}
+\usepackage{times,amssymb,amsmath}
+\input{../cs480preamble.tex}
+
+\begin{document}
+
+\handin{Regular Pumping Exploration}{PUT YOUR NAME HERE}{PUT THE DATE HERE}
+
+The Pumping Lemma says that ``if $L$ is regular then the big quantified formula below is true.''  Or more succinctly, $Regular(L) \rightarrow C$ where $C$ is:
+
+\begin{center}\[
+\begin{array}{r}
+\exists p \in N :\\
+\forall s \in L : \\
+|s| \geq p \rightarrow \\
+\exists x, y, z \in \Sigma^* : \\
+s = xyz\ \land \\
+|y| > 0\ \land \\
+|xy| \leq p\ \land \\
+\forall i \geq 0 : \\
+xy^iz \in L
+\end{array}\]
+\end{center}
+
+Proof by contradiction is accomplished by showing for language $L_{suspect}$ that the negation of C is true, i.e., that the following formula holds:
+
+\begin{center}\[
+\begin{array}{r}
+\forall p \in N :\\
+\exists s \in L_{suspect} : \\
+|s| \geq p\ \land \\
+\forall x, y, z \in \Sigma^* : \\
+s \neq xyz\ \lor \\
+|y| = 0\ \lor \\
+|xy| > p\ \lor \\
+\exists i \geq 0 : \\
+xy^iz \notin L_{suspect}
+\end{array}\]
+\end{center}
+
+\end{document}
