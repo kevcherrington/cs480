@@ -50,6 +50,16 @@ $\therefore$ The language is not regular\\
 
 {\bf b.} $\{0^{m}1^{n} | m \neq n\}$\\
 {\bf c.} $\{w | w \in \{0,1\}^{*} $ is not a palindrome \} \\
+Let $C = \{w | w \in \{0,1\}^{*} $ is not a palindrome$ \}$\\
+$\bar{C} = \{w | w \in \{0,1\}^{*} $ is a palindrome$ \}$\\
+Let $s = 0^{p}1^{m}0^{p}$\\
+$y \neq \epsilon$\\
+$|xy| \leq p$ (y must contain a zero)\\
+Let $i = 0 : 0^{n}1^{m}0^{p} \notin L(\bar{C})$\\
+$\because$ it is not a palindrome
+$\therefore C$ is not regular
+$\because \bar{C}$ is not regular
+\\
 \\
 {\bf 1.55} The pumping lemma says that every regular language has a pumping length $p$, such that every string in the language can be pumped if it has length $p$ or more. If $p$ is a pumping length for language $A$, so is any length $p' \geq p$. The {\bf {\em minimum pumping length}} for $A$ is the smallest $p$ that is a pumping length for $A$. For example, if $A = 01^{*}$, the minimum pumping length is 2. The reason is that the string $s=0$ is in $A$ and has length 1 yet $s$ cannot be pumped, but any string in $A$ of length 2 or more contains a $1$ and hence can be pumped by dividing $s$ so that $x=0, y = 1,$ and $z$ is the rest. For each of the following languages, give the minimum pumping length and justify your answer.
 \\{\bf a.} $0001^{*}$
