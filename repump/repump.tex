@@ -40,6 +40,7 @@ xy^iz \notin L_{suspect}
 
 
 {\bf1.46} Prove that the following languages are not regular. You may use the pumping lemma and the closure of the class of regular languages under union, intersection, and complement.\\
+
 {\bf a.} $\{0^{n}1^{m}0^{n} | m,n \geq 0\}$\\
 \subitem Let $s = 0^{p}1^{m}0^{p}$\\
 $y \neq \epsilon$\\
@@ -49,7 +50,19 @@ $\therefore$ The language is not regular\\
 
 
 {\bf b.} $\{0^{m}1^{n} | m \neq n\}$\\
+\subitem Let $s = 0^n1^{(n+n!)}$
+\subitem So $x$, $y$ and $z$ have the following distribution of zeros:
+	\subsubitem $x$ has $|x|$ zeros
+	\subsubitem $y$ has $|y|$ zeros
+	\subsubitem $z$ nas $(n - |y| - |x|)$ zeros
+\subitem Any $k \le n$ is a factor of $n!$
+\subitem $\exists k \le n$ such that $n + n! = |x| + k \times |y| + (n - |y| - |x|)$.
+\subitem $\implies n! \$ 
+
+
+
 {\bf c.} $\{w | w \in \{0,1\}^{*} $ is not a palindrome \} \\
+\subitem
 Let $C = \{w | w \in \{0,1\}^{*} $ is not a palindrome$ \}$\\
 $\bar{C} = \{w | w \in \{0,1\}^{*} $ is a palindrome$ \}$\\
 Let $s = 0^{p}1^{m}0^{p}$\\
@@ -58,17 +71,17 @@ $|xy| \leq p$ (y must contain a zero)\\
 Let $i = 0 : 0^{n}1^{m}0^{p} \notin L(\bar{C})$\\
 $\because$ it is not a palindrome
 $\therefore C$ is not regular
-$\because \bar{C}$ is not regular
+$\because \bar{C}$ is not regular\\
 \\
-\\
+
 {\bf 1.55} The pumping lemma says that every regular language has a pumping length $p$, such that every string in the language can be pumped if it has length $p$ or more. If $p$ is a pumping length for language $A$, so is any length $p' \geq p$. The {\bf {\em minimum pumping length}} for $A$ is the smallest $p$ that is a pumping length for $A$. For example, if $A = 01^{*}$, the minimum pumping length is 2. The reason is that the string $s=0$ is in $A$ and has length 1 yet $s$ cannot be pumped, but any string in $A$ of length 2 or more contains a $1$ and hence can be pumped by dividing $s$ so that $x=0, y = 1,$ and $z$ is the rest. For each of the following languages, give the minimum pumping length and justify your answer.
 \\{\bf a.} $0001^{*}$
-\\$p=4$
+\\$p=4$ the one must be present in order for it to be pumped
 \\{\bf c.} $001 \union 0^{*}1^{*}$
-\\$p=3$
+\\$p=1$ either the one or the zero can be pumped and will still be in the language
 \\{\bf g.} $1^{*}01^{*}01^{*}$
-\\$p=2$
+\\$p=3$ at least one $1$ must be present in the string for it to be pumped
 \\{\bf i.} $1011$
-\\$p=4$
+\\$p=5$ vacuously true
 
 \end{document}
