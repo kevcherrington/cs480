@@ -57,15 +57,17 @@ $\therefore$ The language is not regular\\
 \subitem $\therefore B$ isn't regular.
 \\
 \\
-\subitem Let $s = 0^n1^{(n+n!)}$
+\subitem Let $s = 0^p1^{(p+p!)}$
 \subitem So $x$, $y$ and $z$ have the following distribution of zeros:
-	\subsubitem $x$ has $|x|$ zeros
-	\subsubitem $y$ has $|y|$ zeros
-	\subsubitem $z$ nas $(n - |y| - |x|)$ zeros
-\subitem Any $k \le n$ is a factor of $n!$
-\subitem $\exists k \le n$ such that $n + n! = |x| + k \times |y| + (n - |y| - |x|)$.
-\subitem $\implies n! $
-
+  \subsubitem $x$ has $|x|$ zeros
+  \subsubitem $y$ has $|y|$ zeros
+  \subsubitem $z$ nas $(p - |y| - |x|)$ zeros
+\subitem Any $k \le p$ is a factor of $p!$
+\subitem $\exists k \le p$ such that $p + p! = |x| + k \times |y| + (p - |y| - |x|)$.
+\subitem $\implies p! = (k - 1) \times |y|$
+\subitem $\implies k = \frac{p! + |y|}{|y|}$
+\subitem $\therefore \forall i, xy^iz \in L$
+\\
 
 
 {\bf c.} $\{w | w \in \{0,1\}^{*} $ is not a palindrome \} \\
